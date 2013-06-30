@@ -10,6 +10,7 @@ def printAsFn(text):
     statement. This prints a string."""
     print(text)
 
+# TODO rewrite to avoid the sleep after last aphorism
 def delayProcessAphorism(process, aphorism, delay=5):
     """"Takes a process and an aphorism as a series of tweets and does the
     process to each tweet, with a five second delay."""
@@ -35,6 +36,7 @@ def tweet(text):
 # loading tweets as data structure - really ugly, but it only has to be done
 # rarely, so...
 
+# TODO write better file loader / blocks of text? CSV?
 def convertFileLineToAphorism(line, tweetedMax=0):
     splitline = line.split('\t')
     aphNumber = int(splitline[0])
@@ -70,6 +72,8 @@ def firstUntweetedNum(aphorisms):
         if(not(aphorisms[aphorism]['tweeted'])):
             return aphorism
     return -1
+
+# TODO move script into separate file
 
 aphorisms = loadAphorismsFromFile("aphorisms3.csv", 254)
 # aphorisms = loadAphorisms()
